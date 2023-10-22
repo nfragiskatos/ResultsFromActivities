@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode == SecondActivity.SECOND_ACTIVITY_RESULT_CODE) {
+        if (requestCode == MAIN_ACTIVITY_REQUEST_CODE && resultCode == SecondActivity.SECOND_ACTIVITY_RESULT_CODE) {
             data?.getStringExtra(SecondActivity.SECOND_ACTIVITY_BUNDLE_ID)?.let {
                 Toast.makeText(this, "Got Result: $it", Toast.LENGTH_SHORT).show()
             }
