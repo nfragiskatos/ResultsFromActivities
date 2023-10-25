@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     private val startSecondActivityCustomContractLauncher =
-        registerForActivityResult(MyCustomContract()) {
-            it?.let {
+        registerForActivityResult(MyCustomContract()) { result: String? ->
+            result?.let {
                 Toast.makeText(this, "Got Result: $it", Toast.LENGTH_SHORT).show()
             }
         }
